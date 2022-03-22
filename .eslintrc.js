@@ -3,6 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
+  plugins: ["prettier", "@typescript-eslint"],
   parser: "vue-eslint-parser",
   parserOptions: {
     parser: "@typescript-eslint/parser",
@@ -10,13 +11,13 @@ module.exports = {
     sourceType: "module",
   },
   extends: [
-    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
-    "prettier/@typescript-eslint",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:vue/vue3-recommended",
     //"plugin:vue/recommended",
-    "prettier/vue",
+    "prettier",
   ],
   globals: {
     defineProps: "readonly",
@@ -24,10 +25,8 @@ module.exports = {
     defineExpose: "readonly",
     withDefaults: "readonly",
   },
-  plugins: ["prettier", "@typescript-eslint"],
   rules: {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars-experimental": "error",
+    "no-unused-vars": "error",
   },
-  "ignorePatterns": ["dist"],
+  ignorePatterns: ["dist"],
 };

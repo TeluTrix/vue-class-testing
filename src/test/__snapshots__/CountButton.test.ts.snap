@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`CountButtons component 1`] = `
+"<div data-v-15663abe=\\"\\"><button id=\\"increment\\" type=\\"button\\" class=\\"actionBtn\\" data-v-15663abe=\\"\\">Minus(-)</button>
+  <p data-v-15663abe=\\"\\">count is: 0</p><button id=\\"decrement\\" type=\\"button\\" class=\\"actionBtn\\" data-v-15663abe=\\"\\">Plus(+)</button>
+</div>"
+`;
