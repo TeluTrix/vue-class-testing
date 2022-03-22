@@ -3,32 +3,45 @@
     <h2 class="subtitle">Search Cryptocurrencies</h2>
     <input id="searchbar" v-model="search" class="input" type="text" placeholder="Search for Cryptocurrencies" />
     <div v-for="currency in currencies" :key="currency.id">
-      <div v-if="currency.name.toLowerCase().includes(search.toLowerCase())">
+      <div
+        v-if="
+          currency.name.toLowerCase().includes(search.toLowerCase()) ||
+          currency.symbol.toLowerCase().includes(search.toLowerCase())
+        "
+      >
         <div class="box searchResult">
           <article class="media">
             <div class="media-left"></div>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>{{ currency.name }}</strong>
+                  <strong class="is-pulled-left">{{ currency.name }} ({{ currency.symbol }})</strong>
                   <br />
-                  <span class="icon-text">
+                  <span class="icon-text is-pulled-left">
                     <span class="icon">
                       <i><img src="public/rankings.png" class="rankingimg" /></i>
                     </span>
-                    <span>{{ currency.rank }}</span>
+                    <span class="is-pulled-left">{{ currency.rank }}</span>
                   </span>
                   <br />
-                  <span class="icon-text">
+                  <span class="icon-text is-pulled-left">
                     <span class="icon">
                       <i><img src="public/coin-stack.png" class="rankingimg" /></i>
                     </span>
-                    <span>{{ currency.type.charAt(0).toUpperCase() + currency.type.slice(1) }}</span>
+                    <span class="is-pulled-left">{{
+                      currency.type.charAt(0).toUpperCase() + currency.type.slice(1)
+                    }}</span>
                   </span>
                 </p>
               </div>
             </div>
           </article>
+          <button class="button is-primary moreBtn is-pulled-right">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+            <span class="is-centered">More about {{ currency.symbol }}</span>
+          </button>
         </div>
       </div>
     </div>
@@ -71,10 +84,12 @@ function getData() {
   margin: auto;
   margin-top: 10pt;
   margin-bottom: 10pt;
-  text-align: left;
 }
 .rankingimg {
   width: 85%;
   margin-top: 10%;
+}
+.box {
+  padding-bottom: 43pt;
 }
 </style>

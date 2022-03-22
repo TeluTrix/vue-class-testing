@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "vitest",
+    "test:open": "peeky open",
+    "test": "peeky run",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "vuetify": "^2.6.4"
   },
   "devDependencies": {
+    "@peeky/test": "^0.13.5",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "@vitejs/plugin-vue": "^2.2.0",
@@ -31,7 +33,6 @@
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.2",
     "vite": "^2.8.0",
-    "vitest": "^0.7.7",
     "vue-tsc": "^0.29.8"
   }
 }
